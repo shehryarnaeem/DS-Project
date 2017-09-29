@@ -19,6 +19,10 @@ public class implementingMarkov implements markovInterface{
        
     }
 
+    /**
+     *
+     * @param str
+     */
     @Override
     public void train(String str) {
         String delim="[ .!,?()-]+";
