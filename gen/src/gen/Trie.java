@@ -33,18 +33,31 @@ public class Trie implements TrieInterface
            for(int i=0;i<str[j].length();i++)
             {
                 TrieNode newNode=new TrieNode();
+          //     System.out.println(current.aa.containsKey(str[j].charAt(i)));
+             //   System.out.println(current.aa);
                 if(!current.aa.containsKey(str[j].charAt(i))) 
-                {
+                {  
                     newNode.ch=str[j].charAt(i);
                     current.aa.put(str[j].charAt(i), newNode);
+                   // System.out.println("check 1"+current.ch);
+                    current=newNode;
                 } 
-                current=newNode;
+                else
+                {
+                  //  System.out.println(str[j].charAt(i));
+                    current=current.aa.get(str[j].charAt(i));
+
+                }
+               
             }
+            
            TrieNode Buffer=new TrieNode();
            Buffer.isWord=true;
            Buffer.ch='0';
+          //  System.out.println("j is"+j);
            Buffer.str=str[++j];
-            System.out.println(Buffer.str);
+      //      System.out.println("check "+current.ch);
+        //   System.out.println(Buffer.str);
            current.aa.put('0', Buffer);
             
         }
@@ -74,33 +87,18 @@ public class Trie implements TrieInterface
         
         TrieNode ptr=Root;
         int i=0;
-        while(!ptr.isWord )
-        {   if(i<str.length())
+        for (int j = 0; j < str.length(); j++) 
+        {
+            
+            ptr=ptr.aa.get(str.charAt(j));
+       //     System.out.println(ptr.ch);
+            if(ptr==null)
             {
-                char che=str.charAt(i);
-                ptr=ptr.aa.get(che);
-                
-                if(ptr==null)
-                {
-                   // System.out.println("hello");
-                    return false;
-                }
+                return false;
             }
-            else if(i==str.length())
-            {
-               // System.out.println("debug 2");
-                ptr=ptr.aa.get('0');
-//                  System.out.println("ptr"+ptr.ch);
-                if(ptr==null)
-                {
-                //    System.out.println("hello1");
-                    return false;
-                }
-            }
-           
-            i++;
+            
         }
-           //System.out.println("ptr3"+ptr.ch+"abc");
+    //System.out.println("ptr3"+ptr.ch+"abc");
     return true;
     }      
 
@@ -137,7 +135,7 @@ public class Trie implements TrieInterface
         }
         else
         {
-            System.out.println("word is not in dictionary");
+            System.out.println("word is not in trie");
         }
           
     }
@@ -170,7 +168,7 @@ public class Trie implements TrieInterface
          int i=0;
          TrieNode ptr=Root;
          if(isInTrie(str))
-         {
+        {
              while(!ptr.isWord)
              {
                 if(i<str.length())
@@ -182,11 +180,11 @@ public class Trie implements TrieInterface
                    ptr=ptr.aa.get('0');
                     System.out.println("meaning \n"+ptr.str);
                 }
-                    i++;
+                i++;
              }
-             
-                 
-         }
+        }
+         else
+             System.out.println("word is not in trie");
          
-     }
+    }
 }

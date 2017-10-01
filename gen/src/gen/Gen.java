@@ -20,10 +20,20 @@ public class Gen {
     public static void main(String[] args) throws IOException
     {
         Trie tr=new Trie();
-        String str=tr.readFile("dictionary.txt");
+        String str=tr.readFile("test1.txt");
         tr.insertWords(tr.giveWords(str));
-        tr.showMeanings("reshma");
-      
+       // System.out.println(tr.isInTrie("abaser"));
+       tr.showMeanings("help");
+       // System.out.println(tr.Root.aa);
+       /* Dictionary dd=new Dictionary();
+        dd.insertArray();*/
+       Dictionary dd=new Dictionary();
+       dd.instantiateDictionary();
+        System.out.println("he");
+        dd.showMeaninggs2("abbreviate");
+        dd.showMeaninggs2("contradictory");
+      //  dd.showMeanings("hello");
+      //  System.out.println(dd.Meanings);
         
     }
     
