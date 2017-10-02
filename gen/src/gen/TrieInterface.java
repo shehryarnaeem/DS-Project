@@ -21,4 +21,10 @@ public interface TrieInterface
     public Boolean isInTrie(String str);
     public void deleteFromTrie(String Str);
     public void insertWord(String str);
+
+    /**
+     *
+     * @param str
+     */
+    void showMeanings1(String str);
 }

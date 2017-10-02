@@ -25,27 +25,7 @@ public class Dictionary implements dictionaryinterface
         
 {
 
-    @Override
-    public String readFile(String filename) throws IOException
-    {
-           BufferedReader br = new BufferedReader(new FileReader(filename));
-        try {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-
-            while (line != null) 
-            {
-                sb.append(line);
-                sb.append("\n");
-                line = br.readLine();
-            }
-            return sb.toString();
-            } 
-            finally 
-            {
-                br.close();
-            }
-    }
+   
 
     @Override
     public void showMeanings(String str) 
@@ -76,7 +56,8 @@ public class Dictionary implements dictionaryinterface
     
 
     @Override
-    public void createDictionary(String[] str) {
+    public void createDictionary(String[] str) // createDictionary takes the word array and loads it in too the trie
+    {
           for (int j = 0; j < str.length; j++) 
         {
            TrieNode current=root;
@@ -120,7 +101,7 @@ if(str[j+1]!=null){
     }
 
     @Override
-    public String []createWordArray(String str1) 
+    public String []createWordArray(String str1) // createWordArray takes the array from read file and splits it over an equal tooos 
     {
          String delim="[=]+";
       String arr[]=str1.split(delim);
@@ -128,7 +109,8 @@ if(str[j+1]!=null){
     }
 
     @Override
-    public Boolean isIndictionary(String str) {
+    public Boolean isIndictionary(String str)                          // checks weather the word is in  the trie or not
+    {
           TrieNode ptr=root;
         int i=0;
         for (int j = 0; j < str.length(); j++) 
@@ -147,12 +129,12 @@ if(str[j+1]!=null){
     }
     void instantiateDictionary() throws IOException
     {
-        String str=readFile("test.txt");
-        String [] arr=createWordArray(str);
-        createDictionary(arr);
+        String str=readFile("test.txt");                    //readFile reads the file and returns the entire file in the form of a string
+        String [] arr=createWordArray(str);                 // createWordArray takes the array from read file and splits it over an equal tooos
+        createDictionary(arr);                              // createDictionary takes the word array and loads it in too the trie
         
     }
-    void showMeaninggs2(String str)
+    void showMeaninggs2(String str)                         // show meanings 2 shows the mening of the word in a the hash map Meanings
     {
         if(isIndictionary(str))
         {   TrieNode ptr=root;
@@ -169,7 +151,27 @@ if(str[j+1]!=null){
             System.out.println("word is not in dictionary");
             
     }
-    
+     @Override
+    public String readFile(String filename) throws IOException      //reads the file and converts it into a string
+    {
+           BufferedReader br = new BufferedReader(new FileReader(filename));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) 
+            {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+            }
+            return sb.toString();
+            } 
+            finally 
+            {
+                br.close();
+            }
+    }
       
        
 }

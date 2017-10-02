@@ -163,7 +163,13 @@ public class Trie implements TrieInterface
                 br.close();
             }
     }
-     void showMeanings(String str)
+
+    /**
+     *
+     * @param str
+     */
+    @Override
+      public void showMeanings1(String str)
      {
          int i=0;
          TrieNode ptr=Root;

@@ -23,16 +23,19 @@ public class Gen {
         String str=tr.readFile("test1.txt");
         tr.insertWords(tr.giveWords(str));
        // System.out.println(tr.isInTrie("abaser"));
-       tr.showMeanings("help");
+       tr.showMeanings1("help");
        // System.out.println(tr.Root.aa);
        /* Dictionary dd=new Dictionary();
         dd.insertArray();*/
        Dictionary dd=new Dictionary();
        dd.instantiateDictionary();
         System.out.println("he");
-        dd.showMeaninggs2("abbreviate");
+        dicttemp dp = new dicttemp();
+            dd.showMeaninggs2("abbreviate");
         dd.showMeaninggs2("contradictory");
-      //  dd.showMeanings("hello");
+        dd.showMeanings("shakeeb");
+    
+        //  dd.shodpwMeanings("hello");
       //  System.out.println(dd.Meanings);
         
     }
