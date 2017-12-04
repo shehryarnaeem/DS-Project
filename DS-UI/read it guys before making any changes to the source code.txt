@@ -1,0 +1,3 @@
+all the changs you guys want too make is in the file dictionary .java
+do not edit the text files and the filing methods
+when creating a new class be sure too create an interface for it.

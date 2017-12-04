@@ -17,6 +17,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -129,7 +135,7 @@ if(str[j+1]!=null){
     }
     void instantiateDictionary() throws IOException
     {
-        String str=readFile("test.txt");                    //readFile reads the file and returns the entire file in the form of a string
+        String str=readFile("test1.txt");                    //readFile reads the file and returns the entire file in the form of a string
         String [] arr=createWordArray(str);                 // createWordArray takes the array from read file and splits it over an equal tooos
         createDictionary(arr);                              // createDictionary takes the word array and loads it in too the trie
         

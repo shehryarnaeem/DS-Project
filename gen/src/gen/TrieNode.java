@@ -16,6 +16,7 @@ public class TrieNode
         public boolean isWord; 
         public HashMap<Character,TrieNode> aa=new HashMap();
         char ch;
+        String word;
         String str="";
         public TrieNode()
         {

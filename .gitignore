@@ -1,1 +1,6 @@
 /gen/dist/
+/gen/nbproject/private/
+/gen/build/
+/DS-UI/nbproject/private/
+/DS-UI/build/
+/DS-UI/dist/

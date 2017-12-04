@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="main" fx:id="main" prefHeight="323.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.ui.C1">
+    <stylesheets>
+        <URL value="@c1.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tf1" layoutX="14.0" layoutY="43.0" onKeyPressed="#show" prefHeight="86.0" prefWidth="467.0" />
+      <TextField fx:id="tf2" layoutX="14.0" layoutY="161.0" prefHeight="86.0" prefWidth="467.0" />
+      <ListView fx:id="sug" layoutX="498.0" layoutY="43.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button id="Show" fx:id="show" layoutX="333.0" layoutY="282.0" mnemonicParsing="false" onAction="#meaning" stylesheets="@c1.css" text="Show" />
+   </children>
+</AnchorPane>
